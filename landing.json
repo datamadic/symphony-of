@@ -1,0 +1,23 @@
+{
+    "devtools_port": 9090,
+    "startup_app": {
+        "name": "Symphony-OpenFin-Landing",
+        "description": "OpenFin POC",
+        "url": "http://localhost:8080/landing-OF.html",
+        "uuid": "Symphony-OpenFin-Landing-m15dqtx4kjl",
+        "autoShow": true,
+        "defaultCentered": true,
+        "frame": true,
+        "defaultHeight": 400,
+        "defaultWidth": 600
+    },
+    "runtime": {
+        "arguments": "",
+        "version": "beta"
+    },
+    "shortcut": {
+        "company": "Symphony-OpenFin-Landing",
+        "description": "Symphony-OpenFin-Landing",
+        "name": "Symphony-OpenFin-Landing"
+    }
+}

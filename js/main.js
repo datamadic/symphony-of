@@ -17,6 +17,14 @@
 //     document.body.insertBefore(header, document.body.firstChild);
 // });
 
+
+document.addEventListener("DOMContentLoaded", event => {
+    console.log("DOM fully loaded and parsed");
+    let iFrame = document.getElementById('iFrame');
+    iFrame.src = 'https://my.symphony.com';
+});
+
+
 window.SYM_API = {
     Notification:Notify,
     ScreenSnippet,
