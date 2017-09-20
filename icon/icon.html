@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Icon</title>
+    <style>
+        /* body{
+            width:600px;
+            margin:auto;
+            position:relative;
+        } */
+        img {   
+            width:100%;
+            text-align:center;
+            vertical-align:middle;
+            position: relative;
+        }
+        #badge:after{
+            content: attr(data-count);
+            position: absolute;
+            background: rgba(255,0,0,1);
+            height:25rem;
+            top:0rem;
+            right:0rem;
+            width:25rem;
+            text-align: center;
+            line-height: 25rem;;
+            font-size: 20rem;
+            font-weight: bold;
+            border-radius: 50%;
+            color:white;
+            border:1px solid red;
+        }
+    </style>
+    <script type="text/javascript" src="http://html2canvas.hertzen.com/build/html2canvas.js"></script>      
+    <script type="text/javascript" src="https://openfin.github.io/symphony-of/canvas2image.js"></script>    
+    <!-- <script src="../bundle/bundle.js"></script> -->
+    
+</head>
+<body>
+    <div id="icon">
+        <span data-count="9+" id="badge">  
+            <img src="https://openfin.github.io/symphony-of/symphony-symbol.png">
+        </span>
+    </div>
+</body>
+    <script type="text/javascript">
+
+        let i = 1;
+
+        const makeIcon = () => {
+            html2canvas(document.getElementById('icon'), { 
+                onrendered: function(canvas) {
+                    console.log('on rendered', canvas);
+                    // let icon = canvas.toDataURL();
+                    Canvas2Image.saveAsPNG(canvas);
+                    // console.log('icon', icon);
+                    // fin.desktop.InterApplicationBus.publish("icon", { icon });
+                }
+            });
+        }
+
+        const countUp = () => {
+            if (i<10) {
+                document.getElementById('badge').setAttribute('data-count', i);
+                makeIcon();
+                i++
+                setTimeout(countUp, 1000)
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", event => {
+            console.log('make icon')
+            countUp();
+        });
+    </script>
+</html>
