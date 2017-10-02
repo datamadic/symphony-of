@@ -4,7 +4,7 @@
         "name": "OpenFin Symphony Client",
         "description": "Experimental client for Symphony - running OpenFin",
         "url": "https://foundation-dev.symphony.com/client/index.html",
-        "uuid": "OpenFin-Symphony-udbrf2z9sehilik9",
+        "uuid": "OpenFinExplorer",
         "autoShow": true,
         "defaultCentered": true,
         "frame": true,

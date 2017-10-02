@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>IAB Subscriber</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>
+        body {
+            background-color: #d1d8e4;
+            color: #2f4263;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .update {
+            background-color: white;
+            margin-left: 100px;
+            margin-right: 100px;
+            padding-left: 15px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-weight: bold;
+        }
+        .updateSpan {
+            font-weight: normal;
+        }
+        pre {
+            margin-left: 100px;
+            margin-right: 100px;
+            font-size: x-small;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>InterApplicationBus Subscriber</h1>
+        <div class='update'>Your Message: <span id='custommessage' class='updateSpan'></span></div>
+        <div class='update'>Other Key: <span id='codedmessage' class='updateSpan'></span></div>
+        <div class='update'>Messages Received: <span id='messagecount' class='updateSpan'>0</span></div>
+        <pre>
+            <code class='javascript'>
+// In this app we subscribe to the messages from Symphony-OpenFin
+fin.desktop.InterApplicationBus.subscribe('OpenFin-Symphony-udbrf2z9sehilik9', 'A Topic', function(message, uuid, name) {
+    customMessageDiv.innerText = message.yourMessage;
+    codedMessageDiv.innerText = message.otherKey;
+    counter.innerText = (parseInt(counter.innerText) + 1).toString();
+})
+            </code>
+        </pre>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script type="text/javascript">
+            hljs.initHighlightingOnLoad();
+            const customMessageDiv = document.getElementById('custommessage');
+            const codedMessageDiv = document.getElementById('codedmessage');
+            const counter = document.getElementById('messagecount');
+            fin.desktop.InterApplicationBus.subscribe('OpenFinExplorer', 'A Topic', function (message, uuid, name) {
+                customMessageDiv.innerText = message.yourMessage;
+                codedMessageDiv.innerText = message.otherKey;
+                counter.innerText = (parseInt(counter.innerText) + 1).toString();
+            })
+        </script>
+</body>
+
+</html>
