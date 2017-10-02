@@ -3,7 +3,7 @@
     "startup_app": {
         "name": "OpenFin Symphony Client",
         "description": "Experimental client for Symphony - running OpenFin",
-        "url": "https://my.symphony.com",
+        "url": "https://foundation-dev.symphony.com/client/index.html",
         "uuid": "OpenFin-Symphony-udbrf2z9sehilik9",
         "autoShow": true,
         "defaultCentered": true,
@@ -13,8 +13,8 @@
         "preload": "http://localhost:8080/bundle/bundle.js"
     },
     "runtime": {
-        "arguments": "--noerrdialogs",
-        "version": "canary"
+        "arguments": "--noerrdialogs --allow-insecure-localhost --disable-web-security --allow-running-insecure-content --ignore-certificate-errors --remember-cert-error-decisions",
+        "version": "community"
     },
     "shortcut": {
         "company": "OpenFin",

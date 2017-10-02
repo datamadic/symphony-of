@@ -134,7 +134,9 @@ class ScreenSnippet {
 window.SYM_API = {
     Notification:Notify,
     ScreenSnippet,
-
+    hack: function() {
+        window.location.href = 'https://foundation-dev.symphony.com/client/index.html?bundle=https://localhost:4000/bundle.json'
+    },
     setBadgeCount:function(number) {
         console.log("SSF Badgecount " + number);
         let win = fin.desktop.Window.getCurrent();
@@ -150,7 +152,7 @@ window.SYM_API = {
         console.log("SSF Activate!");
         let win = fin.desktop.Window.getCurrent();
         win.updateOptions({ icon: 'http://localhost:8080/icon/symphony.png' });
-        fin.desktop.Window.getCurrent().bringToFront();
+        // fin.desktop.Window.getCurrent().bringToFront();
     },
     //undoced
     registerLogger:function() {
