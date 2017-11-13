@@ -17,8 +17,5 @@
         "arguments": "--noerrdialogs",
         "version": "8.56.26.38"
     },
-    "dialogSettings": {
-        "logo": "https://cdn.openfin.co/demos/symphony-of/symphony-long.png"
-    },
     "shortcut": {}
 }
