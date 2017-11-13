@@ -33,9 +33,6 @@
         "icon": "https://symphony.com/favicon.ico"
     },
     "splashScreenImage": "https://cdn.openfin.co/demos/symphony-of/symphony-splash.png",
-    "dialogSettings": {
-        "logo": "https://cdn.openfin.co/demos/symphony-of/symphony-long.png"
-    },
     "appAssets": [
         {
             "src": "https://cdn.openfin.co/demos/symphony-of/OF-ScreenSnippet.zip",
