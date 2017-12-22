@@ -1,0 +1,10 @@
+{
+    "extends": "airbnb-base",
+    "globals": {
+        "window": true,
+        "fin": true
+      },
+      "rules": {
+        "no-restricted-syntax": 0
+      }
+}

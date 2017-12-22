@@ -17,6 +17,9 @@
     "build": "node build.js"
   },
   "devDependencies": {
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
     "http-server": "0.8.5",
     "openfin-cli": "1.1.5"
   }
