@@ -66,7 +66,53 @@ window.SYM_API = {
             }
             resolve(version)
         })
+    },
+    registerProtocolHandler: function (protocolHandler) {
+        // alert('mother fucker', typeof protocolHandler === 'function');
+        if (typeof protocolHandler === 'function') {
+
+            window.processProtocolAction = (...args) => {
+                console.log('this was called', args);
+                debugger;
+                protocolHandler.apply(null, args);
+            };
+        }
     }
 }
 
 window.ssf = window.SYM_API;
+window.get = function (url) {
+    const req = new XMLHttpRequest();
+    req.open('GET', url);
+    req.addEventListener('load', res => {
+        console.log(res.target.responseText);
+    });
+    req.send();
+};
+
+window.post = function (url, dta='') {
+    const req = new XMLHttpRequest();
+    req.open('POST', url);
+    req.addEventListener('load', res => {
+        console.log(res.target.responseText);
+    });
+    req.send(dta);
+};
+
+// get('https://openfin.symphony.com/pod/v2/sessioninfo') // this includes id
+// get('https://openfin.symphony.com/pod/v2/user/presence')
+// post('https://openfin.symphony.com/pod/v1/streams/list')
+
+
+// jQuery21408167458558731262
+
+// show user profile... processProtocolAction('symphony:?streamId=qACkrIadA&streamType=chatroom&userId=84524956385329')
+// https://openfin.symphony.com/webcontroller/maestro/RoomManager?action=adduser&threadid=qACkrIadA%3D%3D%3D&userids=84524956385329
+
+
+// opened external chat!!
+// processProtocolAction('symphony:?streamId=nhYkv343RGvP1TBisje1Bn///p/3A6yvdA==&streamType=im&')
+
+
+// get the popout element
+// window.document.querySelectorAll('a.enhanced-pop-out')[0]

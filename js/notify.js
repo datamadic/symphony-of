@@ -5,6 +5,7 @@
 class Notify {
 
     constructor(title,options){
+        // debugger;
         let msg = options || {};
         console.log('Notification Options:', options);        
         msg.title =  title;
@@ -59,6 +60,7 @@ class Notify {
                 if (this.sticky) {
                     this.notification.close();                    
                 }
+                debugger;
                 cb({target:{callbackJSON:this._data}}); 
             }
         }
