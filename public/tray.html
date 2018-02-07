@@ -101,6 +101,7 @@
         li.additional-pod {
             white-space: nowrap;
             text-overflow: ellipsis;
+            background-color: #ebebeb; 
         }
 
         li.additional-pod > span.pod-text {
@@ -125,8 +126,8 @@
             <li id="available-pods">
                 <div class="li-header" onclick="podMgmt()">Symphony Pods</div>
             </li>
-            <li class="checked pod-list" style="background-color: #a7a7fa" id="primary-pod">primary pod...</li>
-            <li class="pod-list" style="background-color: #b3e4af" id="add-pod">
+            <li class="checked pod-list" style="background-color: #ebebeb" id="primary-pod">primary pod...</li>
+            <li class="pod-list" style="background-color: #ebebeb" id="add-pod">
                 <span onclick="addPodUrl()" id="add-pod-text">+ Add pod</span>
                 <input id="new-pod-url" type="text">
             </li>
@@ -245,7 +246,7 @@
             podText.textContent = stripProtocol(pod);
             podText.classList.add('pod-text');
 
-            close.textContent = '\u26DD';
+            close.textContent = '\u2716';
             close.classList.add('close');
 
             li.appendChild(podText);
